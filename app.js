@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json())
 app.use(logger('dev'))
 
-app.use('/post', postRoutes);
+app.use('/api', postRoutes);
 
 export default app
 
