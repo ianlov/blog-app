@@ -1,5 +1,13 @@
 import Post from '../models/post.js'
 
+export const getRoot = async (req, res) => {
+  try {
+    res.send("I am root!")
+  } catch (error) {
+    res.status(500).send(error.message)
+  }
+}
+
 export const getPosts = async (req, res) => {
     try {
         const post = await Post.find()
@@ -18,7 +26,7 @@ export const getPost = async (req, res) => {
   }
 }
 
-export const createProject = async (req, res) => {
+export const createPost = async (req, res) => {
   try {
       const post = new Post(req.body)
       await post.save()
@@ -28,7 +36,7 @@ export const createProject = async (req, res) => {
   }
 }
 
-export const updateProject = async (req, res) => {
+export const updatePost = async (req, res) => {
   try {
       const { id } = req.params
       const post = await Post.findByIdAndUpdate(id, req.body, { new: true })
@@ -38,7 +46,7 @@ export const updateProject = async (req, res) => {
   }
 }
 
-export const deleteProject = async (req, res) => {
+export const deletePost = async (req, res) => {
   try {
       const { id } = req.params;
       const deleted = await Post.findByIdAndDelete(id)
