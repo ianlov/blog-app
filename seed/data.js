@@ -1,5 +1,6 @@
-import db from '../db/connection.js'
-import post from '../models/post.js'
+import db from '../db/connection.js';
+import post from '../models/post.js';
+import faker from "faker";
 
 const insertData = async () => {
   // reset database
@@ -7,11 +8,10 @@ const insertData = async () => {
 
   const posts = [...Array(100)].map(item => {
     return {
-        title: faker.title(),
-        author: faker.author(),
-        image_url: faker.url(),
-        content: faker.content(),
-        // **
+        title: faker.lorem.sentence(),
+        author: faker.name.findName(),
+        image_url: faker.image.imageUrl(),
+        content: faker.lorem.paragraph(),
     }
   })
   await post.insertMany(posts)
