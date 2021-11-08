@@ -3,6 +3,7 @@ import * as controllers from '../controllers/posts.js'
 
 const router = Router()
 
+router.get('/', controllers.getRoot)
 router.get('/posts', controllers.getPosts)
 
 export default router
