@@ -1,10 +1,9 @@
 import "./App.css";
-import ProductCard from "./component/ProductCard/ProductCard";
-
+import Home from "./screens/Home/Home";
 function App() {
   return (
     <div className="App">
-      <ProductCard />
+      <Home />
     </div>
   );
 }
