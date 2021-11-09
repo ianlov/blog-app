@@ -5,20 +5,17 @@ import {
   exContainerStyling,
 } from "./style";
 
-const ProductCard = () => {
+const ProductCard = ({ img, title, date, author }) => {
   return (
     <div style={containerStyling}>
-      <img
-        src="https://images.unsplash.com/photo-1635967453256-fd9e2d19f386?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1365&q=80"
-        style={imgStyling}
-      />
+      <img src={img} style={imgStyling} />
       <div style={subContainerStyling}>
         <div style={exContainerStyling}>
-          <div>Example</div>
-          <div>12/12/2021</div>
+          <div>{title}</div>
+          <div>{date}</div>
         </div>
-        <div>Lorem ipsum dolor sit amet</div>
-        <div>By Poopoopeepee</div>
+        <div>{content}</div>
+        <div>By {author}</div>
       </div>
     </div>
   );
