@@ -33,19 +33,25 @@ const NewPost = () => {
     <div className="form-container">
       <form onSubmit={handleSubmit}>
         <input 
+          className="input-title"
           name="title"
           placeholder="Title"
           onChange={handleChange}
+          required
         />
         <input
+          className="input-content"
           name="content" 
           placeholder="Content"
           onChange={handleChange}
+          required
         />
         <input 
+          className="input-image"
           name="image_url"
           placeholder="Image Link"
           onChange={handleChange}
+          required
         />
         <button>Submit</button>
       </form>
