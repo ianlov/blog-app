@@ -1,8 +1,10 @@
-import './App.css';
+import "./App.css";
+import ProductCard from "./component/ProductCard/ProductCard";
 
 function App() {
   return (
-    <div>
+    <div className="App">
+      <ProductCard />
     </div>
   );
 }
