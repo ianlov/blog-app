@@ -14,7 +14,7 @@ const ProductCard = ({ img, title, date, author }) => {
           <div>{title}</div>
           <div>{date}</div>
         </div>
-        <div>{content}</div>
+        {/* <div>{content}</div> */}
         <div>By {author}</div>
       </div>
     </div>
