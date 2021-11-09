@@ -23,6 +23,7 @@ const NewPost = () => {
     ev.preventDefault();
     const created = await createPost(post)
     setCreated({ created })
+    console.log("Created!")
   }
 
   const handleChange = (ev) => {
