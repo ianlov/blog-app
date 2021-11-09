@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPost } from "../../services/post.js"
 
 const user = "test user";
 
@@ -9,6 +10,7 @@ const NewPost = () => {
     image_url: "",
     content: ""
   })
+  const [created, setCreated] = useState(false)
 
   useEffect(() => {
     setPost({
@@ -17,8 +19,10 @@ const NewPost = () => {
     })
   }, [])
 
-  const handleSubmit = (ev) => {
+  const handleSubmit = async (ev) => {
     ev.preventDefault();
+    const created = await createPost(post)
+    setCreated({ created })
   }
 
   const handleChange = (ev) => {
